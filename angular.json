@@ -96,12 +96,28 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/bootstrap/css",
+              "src/assets/bootstrap/js",
+              "src/assets/fonts",
+              "src/assets/img/avatars",
+              "src/assets/img/dogs",
+              "src/assets/js"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/bootstrap/css/bootstrap.min.css",
+              "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap",
+              "src/assets/fonts/fontawesome-all.min.css",
+              "src/assets/fonts/fontawesome5-overrides.min.css",
+              "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/bootstrap/js/bootstrap.min.js",
+              "src/assets/js/chart.min.js",
+              "src/assets/js/bs-init.js",
+              "src/assets/js/theme.js"
+            ]
           }
         }
       }
