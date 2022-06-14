@@ -1,0 +1,90 @@
+<body class="bg-gradient-primary container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-9 col-lg-12 col-xl-10">
+      <div class="card shadow-lg border-0 my-5">
+        <div class="card-body p-0 ">
+          <div class="row">
+            <div class="col-lg-5 d-none d-lg-flex">
+              <div class="flex-grow-1 bg-register-image"
+                style="background-image: url('assets/img/gifs/register.gif'); background-size:90% 90%; background-repeat: no-repeat;">
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="p-5">
+                <div class="text-center">
+                  <h4 class="text-dark mb-4">¡Crea una cuenta!</h4>
+                </div>
+                <form class="user">
+                  <div class="mb-3">
+                    <input class="form-control form-control-user" type="text" id="inputUsername"
+                      aria-describedby="usernameHelp" placeholder="Nombre de usuario" name="username"
+                      [(ngModel)]="username">
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control form-control-user" type="email" id="inputEmail"
+                      aria-describedby="emailHelp" placeholder="Dirección de correo electrónico" name="email"
+                      [(ngModel)]="email">
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input class="form-control form-control-user" type="password" id="inputPassword"
+                        placeholder="Contraseña" name="password" [(ngModel)]="password">
+                    </div>
+                    <div class="col-sm-6">
+                      <input class="form-control form-control-user" type="password" id="inputRepeatPassword"
+                        placeholder="Repetir contraseña" name="password_repeat" [(ngModel)]="repeatPassword">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="checkbox" name="isSchoolar" [(ngModel)]="isSchoolar"> Pertenezco a un
+                      colegio/instituto
+                    </div>
+                  </div>
+                  <div *ngIf="isSchoolar === false; else schoolarTemplate">
+                  </div>
+                  <ng-template #schoolarTemplate>
+                    <div class="row mb-3">
+                      <div class="col-sm-6">
+                        <input class="form-control form-control-user" type="text" id="inputSchoolName"
+                          placeholder="Nombre de la escuela" name="schoolName" [(ngModel)]="schoolName">
+                      </div>
+                      <div class="col-sm-6">
+                        <input class="form-control form-control-user" type="text" id="inputSchoolarCourse"
+                          placeholder="Curso" name="schoolarCourse" [(ngModel)]="schoolarCourse">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-sm-6">
+                        <input type="radio" name="isStudent" id="rolSchool" value="estudiante" [(ngModel)]="isStudent">
+                        Es
+                        estudiante
+                        <input type="radio" name="isTeacher" id="rolSchool" value="profesor" [(ngModel)]="isStudent"
+                          class="ms-3"> Es
+                        profesor
+                      </div>
+                    </div>
+                  </ng-template>
+                  <button class="btn btn-primary d-block btn-user w-100" type="button"
+                    (click)="registrar()">Registrarse</button>
+                  <br>
+                  <div>
+                    <p class="text-danger">{{errorMessage}}</p>
+                  </div>
+                  <hr>
+                </form>
+                <div class="text-center">
+                  <a class="small" [routerLink]="['/forgot']" routerLinkActive="active">¿Has olvidado tu contraseña?</a>
+                </div>
+                <div class="text-center">
+                  <a class="small" [routerLink]="['/login']" routerLinkActive="active">¿Tienes ya una cuenta? ¡Inicia
+                    sesión!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

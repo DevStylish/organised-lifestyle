@@ -11,16 +11,17 @@ import { User } from '../interfaces/user.interface';
 })
 export class LoginComponent implements OnInit {
   titulo: String = 'Login';
-  user!: User;
+  user: User = <User>{};
   error: String = '';
+  msgCorrecto: String = '';
 
   username: string = '';
   password: string = '';
+  stillLogged: boolean = false;
 
   constructor(private router: Router, private backendService: BackendService) {}
 
   ngOnInit(): void {
-    this.checkIsLogin();
     this.error = '';
   }
 
@@ -33,18 +34,30 @@ export class LoginComponent implements OnInit {
       this.username.length !== 0 &&
       this.password.length !== 0
     ) {
-      this.user = this.backendService.loginUser(this.username, this.password);
-      console.log(this.user);
-      if (this.user !== undefined && this.user !== null) {
-        localStorage.setItem('userInfo', JSON.stringify(this.user));
-        localStorage.setItem('isLogged', 'true');
-        localStorage.setItem('todoworksLocal', JSON.stringify([]));
-        setInterval(() => {
-          this.router.navigate(['inicio']);
-        }, 3000);
-      } else {
-        this.error = 'Error al introducir el usuario o contraseña';
-      }
+      this.backendService.loginUser(this.username, this.password).subscribe({
+        next: (res) => {
+          this.user = res;
+        },
+        error: (err) => {
+          this.error = 'Error al introducir el usuario o contraseña';
+        },
+        complete: () => {
+          if (this.user !== undefined && this.user !== null) {
+            localStorage.setItem('userInfo', JSON.stringify(this.user));
+            if (this.stillLogged) {
+              localStorage.setItem('isLogged', 'true');
+            }
+            this.error = '';
+            this.msgCorrecto = 'Login correcto, espere un momento';
+            const redirect = setInterval(() => {
+              this.router.navigate(['inicio']);
+              clearInterval(redirect);
+            }, 2000);
+          }
+        },
+      });
+    } else {
+      this.error = 'No se han introducido todos los datos.';
     }
   }
 
@@ -54,7 +67,7 @@ export class LoginComponent implements OnInit {
       localStorage.getItem('userInfo') !== undefined &&
       localStorage.getItem('userInfo') !== null
     ) {
-      this.backendService.redirectLogin();
+      this.backendService.redirectoToMain();
     }
   }
 }

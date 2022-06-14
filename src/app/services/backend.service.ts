@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../organised-lifestyle/interfaces/user.interface';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { catchError } from 'rxjs';
+import { Escuela } from '../organised-lifestyle/interfaces/escuela.interface';
+import { Observable } from 'rxjs';
+import { Tareas } from '../organised-lifestyle/interfaces/tareas.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -13,132 +15,88 @@ export class BackendService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  loginUser(username: String, password: String): any {
-    let url: string = `${environment.apiUrl}/${username}/${password}`;
+  loginUser(username: String, password: String): Observable<User> {
+    let url: string = `${environment.apiUrl}user/${username}/${password}/`;
 
-    this.http.get<User>(url).subscribe((userObtained) => {
-      this.user = userObtained;
-    });
-
-    return this.user;
+    return this.http.get<User>(url);
   }
 
-  registerUser(userInfo: any): boolean {
-    let isUserInsert: boolean = false;
+  registerUser(userInfo: any): Observable<User> {
+    let urlUser: string = `${environment.apiUrl}user`;
 
-    try {
-      let username = userInfo.username;
-      let password = userInfo.password;
-      let email = userInfo.email;
-    } catch (error) {
-      console.error('Error creando el usuario');
-    }
-
-    return isUserInsert;
+    return this.http.post<User>(urlUser, userInfo);
   }
 
-  agregarTarea(username: String, password: String, tarea: any): boolean {
-    let url: string = `${environment.apiUrl}/${username}/${password}`;
+  actualizarDatosUsuario(
+    username: string,
+    password: string,
+    userUpdated: User
+  ): Observable<User> {
+    let urlUser: string = `${environment.apiUrl}user/${username}/${password}`;
 
-    let isTareaUploaded: boolean = true;
-
-    let todoworks = {
-      tarea: [tarea],
-    };
-
-    this.http
-      .patch(url, {
-        headers: new HttpHeaders({
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers':
-            'Origin, X-Requested-With, Content-Type, Accept, authorization',
-          'Content-Type': 'Application/json',
-        }),
-        todoworks,
-      })
-      .subscribe(
-        (data) => console.log('Tarea insertada', data),
-        (error) => (isTareaUploaded = false)
-      );
-
-    return isTareaUploaded;
+    return this.http.patch<User>(urlUser, userUpdated);
   }
 
-  agregarTareaLocalStorage(
-    username: String,
-    password: String,
-    tarea: any
-  ): boolean {
-    let isTareaInsert = false;
+  registerEscuela(schoolarInfo: any): Observable<Escuela> {
+    let urlEscuela: string = `${environment.apiUrl}escuela`;
 
-    if (this.loginUser(username, password) !== null) {
-      let todoworksLocal = JSON.parse(
-        localStorage.getItem('todoworksLocal') || ''
-      );
-
-      if (todoworksLocal !== null && todoworksLocal !== undefined) {
-        let tareas = todoworksLocal;
-
-        let tareaObject = {
-          _id: tareas.length,
-          nombreTarea: tarea.nombreTarea,
-          descripcion: tarea.descripcion,
-          fechaFin: tarea.fechaFin,
-          horaFin: tarea.horaFin,
-        };
-
-        tareas.push(tareaObject);
-
-        let tareasString = JSON.stringify(tareas);
-
-        localStorage.setItem('todoworksLocal', tareasString);
-
-        console.log(tareas);
-        isTareaInsert = true;
-      }
-    }
-
-    return isTareaInsert;
+    return this.http.post<Escuela>(urlEscuela, schoolarInfo);
   }
 
-  eliminarTareaLocalStorage(username: String, password: String, _id: String) {
-    let isTareaDelete = false;
-    if (this.loginUser(username, password) !== null) {
-      let todoworksLocal = JSON.parse(
-        localStorage.getItem('todoworksLocal') || ''
-      );
+  getEscuelaByUsername(username: string): Observable<Escuela> {
+    let url: string = `${environment.apiUrl}escuela/${username}/`;
 
-      if (todoworksLocal !== null && todoworksLocal !== undefined) {
-        let tareas = todoworksLocal;
-        tareas.splice(_id, 1);
+    return this.http.get<Escuela>(url);
+  }
 
-        for (let i = 0; i < tareas.length; i++) {
-          tareas[i]._id = i;
-        }
+  getTareasByUsername(username: string): Observable<Tareas[]> {
+    let url: string = `${environment.apiUrl}tareas/${username}`;
 
-        let tareasString = JSON.stringify(tareas);
+    return this.http.get<Tareas[]>(url);
+  }
 
-        localStorage.setItem('todoworksLocal', tareasString);
+  getTareasBySchoolarCourse(schoolarCourse: string): Observable<Tareas[]> {
+    let url: string = `${environment.apiUrl}tareas/curso/${schoolarCourse}`;
 
-        isTareaDelete = true;
-      }
-    }
+    return this.http.get<Tareas[]>(url);
+  }
 
-    return isTareaDelete;
+  agregarTarea(tarea: any): Observable<Tareas> {
+    let url: string = `${environment.apiUrl}tareas/`;
+
+    return this.http.post<Tareas>(url, tarea);
+  }
+
+  editarTarea(username: String, tarea: any): Observable<Tareas> {
+    let url: string = `${environment.apiUrl}tareas/${tarea._id}/${username}`;
+
+    return this.http.patch<Tareas>(url, tarea);
+  }
+
+  indicarPuntos(username: String, schoolar: any): Observable<Escuela> {
+    let url: string = `${environment.apiUrl}escuela/${username}`;
+
+    return this.http.patch<Escuela>(url, schoolar);
   }
 
   redirectLogin() {
+    this.router.navigate(['login']);
+  }
+
+  redirectoToMain() {
     this.router.navigate(['inicio']);
   }
 
+  eliminarTarea(username: string, _id: String): Observable<Tareas> {
+    let url: string = `${environment.apiUrl}tareas/${_id}/${username}`;
+
+    return this.http.delete<Tareas>(url);
+  }
+
   logout() {
-    if (
-      localStorage.getItem('userInfo') !== null &&
-      localStorage.getItem('isLogged') !== null
-    ) {
-      localStorage.removeItem('userInfo');
-      localStorage.removeItem('isLogged');
-    }
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('isLogged');
+    localStorage.removeItem('schoolarInfo');
 
     this.redirectLogin();
   }

@@ -1,136 +1,16 @@
-<body id="page-top">
+<body id="page-top" ng-csp="no-unsafe-eval">
   <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
       <app-sidebar></app-sidebar>
     </nav>
     <div class="d-flex flex-column" id="content-wrapper">
       <div id="content">
-        <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-          <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop"
-              type="button"><i class="fas fa-bars"></i></button>
-            <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
-              <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
-                  placeholder="Buscar por... (Tarea, usuario, profesor, ...)"><button class="btn btn-primary py-0"
-                  type="button"><i class="fas fa-search"></i></button></div>
-            </form>
-            <ul class="navbar-nav flex-nowrap ms-auto">
-              <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                  data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                  <form class="me-auto navbar-search w-100">
-                    <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
-                        placeholder="Search for ...">
-                      <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i
-                            class="fas fa-search"></i></button></div>
-                    </div>
-                  </form>
-                </div>
-              </li>
-              <li class="nav-item dropdown no-arrow mx-1">
-                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                    data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3+</span><i
-                      class="fas fa-bell fa-fw"></i></a>
-                  <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                    <h6 class="dropdown-header">centro de alertas</h6><a class="dropdown-item d-flex align-items-center"
-                      href="#">
-                      <div class="me-3">
-                        <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                      </div>
-                      <div><span class="small text-gray-500">December 12, 2019</span>
-                        <p>A new monthly report is ready to download!</p>
-                      </div>
-                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="me-3">
-                        <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                      </div>
-                      <div><span class="small text-gray-500">December 7, 2019</span>
-                        <p>$290.29 has been deposited into your account!</p>
-                      </div>
-                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="me-3">
-                        <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                      </div>
-                      <div><span class="small text-gray-500">December 2, 2019</span>
-                        <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                      </div>
-                    </a><a class="dropdown-item text-center small text-gray-500" href="#">Mostras todas las alertas</a>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item dropdown no-arrow mx-1">
-                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                    data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i
-                      class="fas fa-envelope fa-fw"></i></a>
-                  <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                    <h6 class="dropdown-header">centro de alertas</h6><a class="dropdown-item d-flex align-items-center"
-                      href="#">
-                      <div class="dropdown-list-image me-3"><img class="rounded-circle"
-                          src="assets/img/avatars/avatar4.jpeg">
-                        <div class="bg-success status-indicator"></div>
-                      </div>
-                      <div class="fw-bold">
-                        <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've
-                            been having.</span></div>
-                        <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                      </div>
-                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="dropdown-list-image me-3"><img class="rounded-circle"
-                          src="assets/img/avatars/avatar2.jpeg">
-                        <div class="status-indicator"></div>
-                      </div>
-                      <div class="fw-bold">
-                        <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
-                        <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
-                      </div>
-                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="dropdown-list-image me-3"><img class="rounded-circle"
-                          src="assets/img/avatars/avatar3.jpeg">
-                        <div class="bg-warning status-indicator"></div>
-                      </div>
-                      <div class="fw-bold">
-                        <div class="text-truncate"><span>Last month's report looks great, I am very happy with the
-                            progress so far, keep up the good work!</span></div>
-                        <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
-                      </div>
-                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                      <div class="dropdown-list-image me-3"><img class="rounded-circle"
-                          src="assets/img/avatars/avatar5.jpeg">
-                        <div class="bg-success status-indicator"></div>
-                      </div>
-                      <div class="fw-bold">
-                        <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me
-                            that people say this to all dogs, even if they aren't good...</span></div>
-                        <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
-                      </div>
-                    </a><a class="dropdown-item text-center small text-gray-500" href="#">Mostras todas las alertas</a>
-                  </div>
-                </div>
-                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown">
-                </div>
-              </li>
-              <div class="d-none d-sm-block topbar-divider"></div>
-              <li class="nav-item dropdown no-arrow">
-                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                    data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie
-                      Luna</span><img class="border rounded-circle img-profile"
-                      src="assets/img/avatars/avatar1.jpeg"></a>
-                  <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item"
-                      href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a><a
-                      class="dropdown-item" href="#"><i
-                        class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Ajustes</a><a class="dropdown-item"
-                      href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Actividades recientes</a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#" (click)="logout()"><i
-                        class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <app-up-menu></app-up-menu>
         <div class="container-fluid">
           <div class="d-sm-flex justify-content-between align-items-center mb-4">
-            <h3 class="text-dark mb-0">Panel de control</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block"
-              role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generar reporte</a>
+            <h3 class="text-dark mb-0">Panel de control</h3>
+            <!-- <a class="btn btn-primary btn-sm d-none d-sm-inline-block"
+              role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generar reporte</a> -->
           </div>
           <div class="row">
             <div class="col-md-6 col-xl-3 mb-4">
@@ -151,10 +31,23 @@
                 <div class="card-body">
                   <div class="row align-items-center no-gutters">
                     <div class="col me-2">
-                      <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Puntos Obtenidos</span></div>
-                      <div class="text-dark fw-bold h5 mb-0"><span>$215,000</span></div>
+                      <div class="text-uppercase text-success fw-bold text-xs mb-1">
+                        <span>Cookie-Points Obtenidos</span>
+                      </div>
+                      <div class="text-dark fw-bold h5 mb-0">
+                        <div *ngIf="userInfo.isSchoolarMember === true; else noPoints">
+                          <span *ngIf="schoolarInfo === undefined; else showPoints">0<i
+                              class='fas fa-cookie'></i></span>
+                          <ng-template #showPoints>
+                            <span>{{schoolarInfo.points}}</span>
+                          </ng-template>
+                        </div>
+                        <ng-template #noPoints>
+                          <span>Solo escuelas</span>
+                        </ng-template>
+                      </div>
                     </div>
-                    <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                    <div class="col-auto"><i class="fas fa-cookie-bite fa-2x text-gray-300"></i></div>
                   </div>
                 </div>
               </div>
@@ -167,12 +60,16 @@
                       <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>Tareas</span></div>
                       <div class="row g-0 align-items-center">
                         <div class="col-auto">
-                          <div class="text-dark fw-bold h5 mb-0 me-3"><span>50%</span></div>
+                          <div class="text-dark fw-bold h5 mb-0 me-3">
+                            <span>{{porcentajeTareasFinalizadas | number: '1.2-2'}}%</span>
+                          </div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm">
-                            <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-                              style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                            <div class="progress-bar bg-info" id="barra-progreso" aria-valuenow="50" aria-valuemin="0"
+                              aria-valuemax="100" style="width: 50%;">
+                              <span class="visually-hidden">{{porcentajeTareasFinalizadas | number: '1.2-2'}}%</span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -189,7 +86,7 @@
                     <div class="col me-2">
                       <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Trabajos pendientes</span>
                       </div>
-                      <div class="text-dark fw-bold h5 mb-0"><span>18</span></div>
+                      <div class="text-dark fw-bold h5 mb-0"><span>{{numTareasPendientes}}</span></div>
                     </div>
                     <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
                   </div>
@@ -199,9 +96,8 @@
           </div>
           <!-- Start: Chart -->
           <div class="row">
-            <div class="col-lg-7 col-xl-8">
-              <div class="card shadow mb-4"
-                *ngIf="userInfo.schoolar !== undefined && userInfo.schoolar.isStudent !== true; else blankAdmin">
+            <div class="col-lg-12 col-xl-8">
+              <!-- <div class="card shadow mb-4" *ngIf="userInfo.isSchoolarMember !== true; else blankAdmin">
                 <div class="card-header d-flex justify-content-between align-items-center">
                   <h6 class="text-primary fw-bold m-0">Administración de usuarios</h6>
                   <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle"
@@ -252,14 +148,14 @@
               </div>
               <ng-template #blankAdmin>
 
-              </ng-template>
+              </ng-template> -->
 
               <!-- Listado de tareas -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
 
                   <div class="d-flex flex-row align-items-center">
-                    <h6 class="text-primary fw-bold m-0 ">Todo List</h6>
+                    <h6 class="text-primary fw-bold m-0 ">Lista de tareas</h6>
                     <a href="#" class="btn btn-primary ms-auto" data-bs-toggle="modal"
                       data-bs-target="#exampleModal">Añadir tarea</a>
 
@@ -268,14 +164,16 @@
                       aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
+
                           <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Añadir tarea</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                              (click)="cerrarTarea()"></button>
                           </div>
                           <div class="modal-body">
                             <div>
 
-                              <!-- Datos de entrada de creación de tarea -->
+                              <!-- MODAL DE CREACIÓN DE TAREA -->
                               <div class="mb-3">
                                 <label for="nombreTarea" class="form-label">Nombre de la tarea</label>
                                 <input type="text" class="form-control" id="nombreTarea" [(ngModel)]="nombreTarea">
@@ -293,65 +191,188 @@
                                 <label for="horaFin" class="form-label">Hora fin (Opcional)</label>
                                 <input type="time" class="form-control" id="horaFin" [(ngModel)]="horaFin">
                               </div>
-
-                              <div class="mb-3">
-                                <label for="opcionesAvanzadas" class="form-label"><input type="checkbox"
-                                    id="opcionesAvanzadas"> Opciones avanzadas</label>
-
+                              <div *ngIf="schoolarInfo !== undefined">
+                                <div class="mb-3" *ngIf="schoolarInfo.isTeacher">
+                                  <label for="cursoRef" class="form-label">Curso asignado (Opcional)</label>
+                                  <input type="text" class="form-control" id="cursoRef" [(ngModel)]="cursoRef">
+                                </div>
                               </div>
-
                             </div>
                           </div>
+
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" (click)="crearTarea()">Guardar tarea</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                              (click)="cerrarTarea()">Cerrar</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                              (click)="crearTarea()">Guardar tarea</button>
                           </div>
+
+                          <!-- FIN DE MODAL DE CREACIÓN DE TAREA -->
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
-                <div *ngIf="tareas.length > 0; else todoVacio">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngFor="let tarea of tareas; let i = index">
-                      <div class="row align-items-center no-gutters">
-                        <div class="col me-2">
-                          <h6 class="mb-0">
-                            <strong>{{tarea.nombreTarea}}</strong>
-                          </h6>
-                          <span class="text-xs">{{tarea.fechaFin || "Indefinido"}}</span>
-                        </div>
-                        <div class="col-auto">
-                          <div class="form-check d-flex align-items-center">
-                            <input class="form-check-input" type="checkbox" id="formCheck-1">
-                            <label class="form-check-label" for="formCheck-1"></label>
-                            <a href="#" class="btn btn-danger ms-3" (click)="eliminarTarea(tarea._id)">Eliminar
-                              tarea</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <ng-template #todoVacio>
+                <div *ngIf="tareas === undefined || tareas.length == 0; else mostrarTareas">
                   <ul class="list-group list-group-flush">
                     <div class="row align-items-center no-gutters">
-                      <div class="col me-2">
-                        <h6 class="mb-0">
-                          <h5><strong>No hay tareas</strong></h5>
-                        </h6>
-                      </div>
-                      <div class="col-auto">
-
+                      <div class="col my-3 d-flex justify-content-center align-content-center">
+                        <h5><strong>No hay tareas</strong></h5>
                       </div>
                     </div>
                   </ul>
+                </div>
+                <ng-template #mostrarTareas>
+                  <div *ngIf="tareas.length > 0;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item" *ngFor="let tarea of tareas; let i = index">
+                        <div class="row align-items-center no-gutters">
+                          <div class="col me-2">
+                            <h6 class="mb-0">
+                              <strong>{{tarea.nombreTarea}}</strong>
+                            </h6>
+                            <span class="text-xs">{{tarea.fechaFin || "Indefinido"}}</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="form-check d-flex align-items-center">
+                              <input class="form-check-input" type="checkbox" id="formCheck-{{i}}"
+                                [checked]="comprobarInformacionTarea(tarea)"
+                                (change)="marcarTarea(tarea._id, comprobarInformacionTarea(tarea))">
+                              <label class="form-check-label" for="formCheck-1"></label>
+                              <a href="#" class="btn btn-outline-success ms-3" (click)="visualizarTarea(tarea._id)"
+                                data-bs-toggle="modal" data-bs-target="#visualizeModal">Ver
+                                tarea</a>
+                              <div *ngIf="tarea.username == userInfo.username">
+                                <a href="#" class="btn btn-outline-secondary ms-3" (click)="visualizarTarea(tarea._id)"
+                                  data-bs-toggle="modal" data-bs-target="#editableModal">Editar
+                                  tarea</a>
+                                <a class="btn btn-outline-danger ms-3" (click)="eliminarTarea(tarea._id)">Eliminar
+                                  tarea</a>
+                              </div>
+                              <!-- Modales -->
+
+                              <!-- Modal de visualizacion de tarea -->
+                              <div class="modal fade" id="visualizeModal" tabindex="-1"
+                                aria-labelledby="visualizeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="visualizeModalLabel">Ver tarea</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        (click)="cerrarTarea()" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div>
+                                        <div class="mb-3">
+                                          <label for="nombreTarea" class="form-label">Nombre de la tarea</label>
+                                          <input type="text" class="form-control" id="nombreTarea"
+                                            [(ngModel)]="nombreTarea" disabled="true">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="descripcionTarea" class="form-label">Descripción tarea
+                                            (Opcional)</label>
+                                          <textarea class="form-control" id="descripcionTarea"
+                                            [(ngModel)]="descripcionTarea" disabled="true"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="fechaFin" class="form-label">Fecha fin (Opcional)</label>
+                                          <input type="date" class="form-control" id="fechaFin" [(ngModel)]="fechaFin"
+                                            disabled="true">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="horaFin" class="form-label">Hora fin (Opcional)</label>
+                                          <input type="time" class="form-control" id="horaFin" [(ngModel)]="horaFin"
+                                            disabled="true">
+                                        </div>
+                                        <div *ngIf="schoolarInfo !== undefined">
+                                          <div class="mb-3" *ngIf="schoolarInfo.isTeacher">
+                                            <label for="cursoRef" class="form-label">Curso asignado (Opcional)</label>
+                                            <input type="text" class="form-control" id="cursoRef" [(ngModel)]="cursoRef"
+                                              disabled="true">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        (click)="cerrarTarea()">Cerrar</button>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Fin modal de visualización -->
+
+                              <!-- Inicio modal de edicion -->
+
+                              <div class="modal fade" id="editableModal" tabindex="-1"
+                                aria-labelledby="editableModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="editableModalLabel">Editar tarea</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        (click)="cerrarTarea()"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div>
+                                        <div class="mb-3">
+                                          <label for="nombreTarea" class="form-label">Nombre de la tarea</label>
+                                          <input type="text" class="form-control" id="nombreTarea"
+                                            [(ngModel)]="nombreTarea">
+                                          <label class="text-danger" *ngIf="nombreTarea === ''">El nombre de la tarea es
+                                            requerido</label>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="descripcionTarea" class="form-label">Descripción tarea
+                                            (Opcional)</label>
+                                          <textarea class="form-control" id="descripcionTarea"
+                                            [(ngModel)]="descripcionTarea"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="fechaFin" class="form-label">Fecha fin (Opcional)</label>
+                                          <input type="date" class="form-control" id="fechaFin" [(ngModel)]="fechaFin">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="horaFin" class="form-label">Hora fin (Opcional)</label>
+                                          <input type="time" class="form-control" id="horaFin" [(ngModel)]="horaFin">
+                                        </div>
+                                        <div *ngIf="schoolarInfo !== undefined">
+                                          <div class="mb-3" *ngIf="schoolarInfo.isTeacher">
+                                            <label for="cursoRef" class="form-label">Curso asignado (Opcional)</label>
+                                            <input type="text" class="form-control" id="cursoRef"
+                                              [(ngModel)]="cursoRef">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        (click)="cerrarTarea()">Cerrar</button>
+                                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                        (click)="editarTarea(tarea._id)">Editar tarea</button>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Fin de modal de edicion -->
+
+                              <!-- Fin de Modales -->
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </ng-template>
               </div>
 
             </div>
-            <div class="col-lg-5 col-xl-4">
+            <!-- <div class="col-lg-5 col-xl-4">
               <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
                   <h6 class="text-primary fw-bold m-0">Gráfica de tráfico de tareas</h6>
@@ -365,16 +386,16 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-area"><canvas
-                      data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}}"></canvas>
+                  <div class="chart-area">
+                    <canvas id="canvas"
+                      data-bss-chart='{"type":"doughnut","data":{"labels":["Finalizadas","Pendientes"],"datasets":[{"label":"","backgroundColor":["#1cc88a","#f6c23e"],"borderColor":["#ffffff","#ffffff"],"data":["50","15"]}]},"options":{"maintainAspectRatio":false,"legend":{"display":false,"labels":{"fontStyle":"normal"}},"title":{"fontStyle":"normal"}}}'></canvas>
                   </div>
                   <div class="text-center small mt-4"><span class="me-2"><i
-                        class="fas fa-circle text-primary"></i>&nbsp;Evaluadas</span><span class="me-2"><i
-                        class="fas fa-circle text-success"></i>&nbsp;Entregadas</span><span class="me-2"><i
-                        class="fas fa-circle text-info"></i>Pendientes</span></div>
+                        class="fas fa-circle text-success"></i>&nbsp;Finalizadas</span><span class="me-2"><i
+                        class="fas fa-circle text-warning"></i>Pendientes</span></div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <!-- End: Chart -->
           <div class="row">
@@ -384,30 +405,27 @@
                   <h6 class="text-primary fw-bold m-0">Materias (% completado)</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small fw-bold">Server migration<span class="float-end">20%</span></h4>
+                  <h4 class="small fw-bold">Tareas/Examenes suspensos<span class="float-end">20%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
                       style="width: 20%;"><span class="visually-hidden">20%</span></div>
                   </div>
-                  <h4 class="small fw-bold">Sales tracking<span class="float-end">40%</span></h4>
+                  <h4 class="small fw-bold">Tareas/Examenes pendientes de realizar<span class="float-end">40%</span>
+                  </h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-warning" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
                       style="width: 40%;"><span class="visually-hidden">40%</span></div>
                   </div>
-                  <h4 class="small fw-bold">Customer Database<span class="float-end">60%</span></h4>
+                  <h4 class="small fw-bold">Tareas/Examenes pendientes de calificar<span class="float-end">60%</span>
+                  </h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-primary" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                    <div class="progress-bar bg-info" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
                       style="width: 60%;"><span class="visually-hidden">60%</span></div>
                   </div>
-                  <h4 class="small fw-bold">Payout Details<span class="float-end">80%</span></h4>
+                  <h4 class="small fw-bold">Tareas/Examenes aprobados<span class="float-end">80%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                    <div class="progress-bar bg-success" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
                       style="width: 80%;"><span class="visually-hidden">80%</span></div>
-                  </div>
-                  <h4 class="small fw-bold">Account setup<span class="float-end">Complete!</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                      style="width: 100%;"><span class="visually-hidden">100%</span></div>
                   </div>
                 </div>
               </div>

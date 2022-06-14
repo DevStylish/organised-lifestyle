@@ -7,7 +7,8 @@
             <div class="row">
               <div class="col-lg-6 d-none d-lg-flex">
                 <div class="flex-grow-1 bg-login-image"
-                  style="background-image: url(&quot;assets/img/dogs/image3.jpeg&quot;);"></div>
+                  style="background-image: url('assets/img/gifs/login.gif'); background-size:100% 100%; background-repeat: no-repeat;">
+                </div>
               </div>
               <div class="col-lg-6">
                 <div class="p-5">
@@ -26,36 +27,31 @@
                     <div class="mb-3">
                       <div class="custom-control custom-checkbox small">
                         <div class="form-check">
-                          <input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"><label
+                          <input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"
+                            name="stillLogged" [(ngModel)]="stillLogged"><label
                             class="form-check-label custom-control-label" for="formCheck-1">Mantener sesión
                             abierta</label>
                         </div>
                       </div>
                       <div>
                         <p class="text-danger">{{error}}</p>
+                        <p class="text-success">{{msgCorrecto}}</p>
                       </div>
                     </div>
-                    <button class="btn btn-primary d-block btn-user w-100" type="submit" (click)="login()">Iniciar
+                    <button class="btn btn-primary d-block btn-user w-100" type="button" (click)="login()">Iniciar
                       sesión</button>
-                    <hr>
-                    <a class="btn btn-primary d-block btn-google btn-user w-100 mb-2 opacity-75" role="button"
-                      data-bs-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="shake"
-                      title="Lo sentimos, esta opción todavía está en desarrollo"><i class="fab fa-google"></i>&nbsp;
-                      Iniciar sesión con Google
-                    </a>
-                    <a class="btn btn-primary d-block btn-facebook btn-user w-100 opacity-75" role="button"
-                      data-bs-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="shake"
-                      title="Lo sentimos, esta opción todavía está en desarrollo">
-                      <i class="fab fa-facebook-f"></i>&nbsp;
-                      Iniciar sesión con Facebook
-                    </a>
                     <hr>
                   </form>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">¿Has olvidado tu contraseña?</a>
+                    <a class="small" [routerLink]="['/forgot']" routerLinkActive="active">
+                      ¿Has olvidado tu contraseña?
+                    </a>
                   </div>
-                  <div class="text-center"><a class="small" href="register.html">¡Crear una cuenta
-                      ahora!</a></div>
+                  <div class="text-center">
+                    <a class="small" [routerLink]="['/register']" routerLinkActive="active">
+                      ¡Crear una cuenta ahora!
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
