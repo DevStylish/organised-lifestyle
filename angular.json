@@ -118,6 +118,9 @@
               "src/assets/js/theme.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
